@@ -33,7 +33,9 @@
     "lint": "node_modules/.bin/eslint bin/node-sass lib scripts test",
     "test": "node_modules/.bin/mocha test/{*,**/**}.js",
     "build": "node scripts/build.js --force",
-    "prepublish": "not-in-install && node scripts/prepublish.js || in-install"
+    "prepublish": "not-in-install && node scripts/prepublish.js || in-install",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "files": [
     "bin",
@@ -70,7 +72,8 @@
     "npmlog": "^4.0.0",
     "request": "^2.79.0",
     "sass-graph": "^2.2.4",
-    "stdout-stream": "^1.4.0"
+    "stdout-stream": "^1.4.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.8",
@@ -84,5 +87,6 @@
     "rimraf": "^2.5.2",
     "sass-spec": "3.5.0-1",
     "unique-temp-dir": "^1.0.0"
-  }
+  },
+  "snyk": true
 }
